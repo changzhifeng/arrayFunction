@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let testArr = [1,2,3,4,2,2,3,4,2,4];
+        function findMOst(testArr){
+            let obj = {},count = 0,_name = '';
+            testArr.map(key => {
+                obj[key]?obj[key]++:obj[key]=1;
+                if(obj[key] > count){
+                    count = obj[key];
+                    _name = key;
+                }
+            });    
+            console.log(_name,count);  
+            return "出现次数最多的为"+_name+"，出现了"+count+"次。";
+        }
+        let result = findMOst(testArr);
+        alert(result);
+    </script>
+</body>
+</html>
