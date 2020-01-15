@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组去重方法（一）
+        let testArr = [1,2,5,3,4,5,3,6,7,1,8,9];
+        // function shuzuquchong(arr){
+        //     let newArr = [];
+        //     for (let index = 0; index < arr.length; index++) {
+        //         const element = arr[index];
+        //         if(newArr.indexOf(element)==-1){
+        //             newArr.push(element);
+        //         }
+        //     }
+        //     return newArr;
+        // }
+        // let result = shuzuquchong(testArr);
+        // console.log(result);
+
+        // 数组去重方法（二）
+        function shuzuquchong(arr){
+            let newArr = [];
+            for (let index = 0; index < arr.length; index++) {
+                const ele = arr[index];
+                let state = 1;
+                for (let index1 = 0; index1 < newArr.length; index1++) {
+                    const ele1 = newArr[index1];
+                    if(ele==ele1){
+                        state = 0;
+                        break;
+                    }
+                }
+                if(state==1){
+                    newArr.push(ele);
+                }
+            }
+            return newArr;
+        }
+        let result = shuzuquchong(testArr);
+        console.log(result);
+    </script>
+</body>
+</html>
